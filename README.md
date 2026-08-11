@@ -28,7 +28,7 @@ swim-ai-coach/ <br>
 
 ## Get data clean and embeded
 
-Because we have the data saved in the form of pdfs we need to first stract them and
+Because we have the data saved in the form of pdfs we need to first extract them and
 then store them in chunks using the *ingest.py* (has to be run from the parent directory)
 
 ```
