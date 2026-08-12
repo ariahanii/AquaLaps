@@ -50,7 +50,7 @@ python src/embed.py
 3. the gemini api key needs to be added either using environment injection (using .env file) or by running
 the following in terminal replacing *abcd* with your gemini api key
 ```
-GEMINI_API_KEY="abcd"
+echo "GEMINI_API_KEY='abcd'" > .env
 ```
 
 4. finally to run the UI we run it using streamlit
