@@ -43,8 +43,8 @@ pip install -r requirements.txt
 2. Because we have the data saved in the form of pdfs we need to first extract them and
 then store them in chunks using the *ingest.py* (has to be run from the parent directory) and then *embed.py*
 ```
-python ingest.py
-python embed.py
+python src/ingest.py
+python src/embed.py
 ```
 
 3. the gemini api key needs to be added either using environment injection (using .env file) or by running
