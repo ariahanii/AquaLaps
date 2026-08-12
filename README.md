@@ -1,5 +1,9 @@
 # Aqual Laps
 
+*since this is not a commercial project*
+*It is not live on any server in order to*
+*deploy it you need to use your own gemini api key*
+
 This projects uses scientific papers and experimental data available to provide swimmers
 with the most optimized training tailored to their goals and their current situation.
 
@@ -20,19 +24,35 @@ swim-ai-coach/ <br>
 │   └── rules.py             # sanity-check logic (volume caps, taper rules) <br>
 ├── app.py                   # Streamlit entrypoint <br>
 ├── tests/ <br>
-│   └── test_rules.py <br>
+│   └── test_api.py <br>
 ├── requirements.txt <br>
-├── .env.example              # placeholder for API keys, real .env gitignored <br>
+├── .env              # placeholder for API keys, real .env gitignored <br>
 └── README.md <br>
 
 
-## Get data clean and embeded
+## Local Deployment
 
-Because we have the data saved in the form of pdfs we need to first extract them and
-then store them in chunks using the *ingest.py* (has to be run from the parent directory)
 
+1. First we start by installing setting up the python virtual environment
 ```
-    python ingest.py
-    (and then)
-    python embed.py
+python -m venv .venv
+pip install -r requirements.txt
+```
+
+2. Because we have the data saved in the form of pdfs we need to first extract them and
+then store them in chunks using the *ingest.py* (has to be run from the parent directory) and then *embed.py*
+```
+python ingest.py
+python embed.py
+```
+
+3. the gemini api key needs to be added either using environment injection (using .env file) or by running
+the following in terminal replacing *abcd* with your gemini api key
+```
+GEMINI_API_KEY="abcd"
+```
+
+4. finally to run the UI we run it using streamlit
+```
+streamlit run app.py
 ```
